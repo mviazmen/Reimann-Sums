@@ -1,0 +1,21 @@
+from math import sin, cos, tan, acos, asin, atan
+from math import exp, e, pi
+from math import log, log10, sqrt, log2
+func=input("Enter function: ")
+a=float(input("Enter Lower Bound: "))
+b=float(input("Enter Upper Bound: "))
+n=int(input("Enter a whole number of boxes: "))
+w=((b-a)/n)
+LRAM=0
+RRAM=0
+MRAM=0
+for k in range(0,n):
+    x=w*k+a
+    LRAM=LRAM+eval(func)*w
+    x=w*(k+1)+a
+    RRAM=RRAM+eval(func)*w
+    x=w*(k+1/2)+a
+    MRAM=MRAM+eval(func)*w
+print("LRAM = "+str(LRAM))
+print("RRAM = "+str(RRAM))
+print("MRAM = "+str(MRAM))
